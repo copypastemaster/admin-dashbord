@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Noto+Sans+JP:wght@300&family=Roboto:wght@300;400&family=Shantell+Sans:ital,wght@1,300&family=Tilt+Prism&display=swap');
+
+
+
 * {
     margin: 0;
     padding: 0;
+    --color: rgba(218, 190, 132, 0.829);
+    --dash-color: 
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 #container {
@@ -8,6 +15,7 @@
     grid-template-columns: 0.6fr 2fr 2fr;
     grid-template-rows: repeat(4, 1fr);
     height: 100vh;
+    width: 100vw;
 }
 
 /* Header */
@@ -16,7 +24,6 @@
     grid-column-start: 2;
     grid-column-end: 4;
     background-color: aliceblue;
-
 }
 
 .search {
@@ -27,17 +34,19 @@
 
 .name-bell-icon {
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
 }
 
 .hero-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding-bottom: 1rem;
 }
 
 .right-nav {
     display: flex;
     gap: 5rem;
+    align-items: flex-end;
 }
 
 /* Sidebar */
@@ -49,12 +58,19 @@
     flex-direction: column;
     gap: 6rem;
     align-items: center;
-    background-color: steelblue;
+    background-color: var(--color)
+}
+
+.dashboard {
+    background-color: rgb(146, 111, 45);
+    font-size: 40px;
+    color: beige;
+    padding: 20px;
 }
 
 .links {
     display: flex;
-    gap: 50px;
+    justify-content: space-evenly;
     flex-direction: column;
 }
 
@@ -73,22 +89,57 @@
     margin: 2rem;
     display: flex;
     justify-content: space-between;
+    gap: 50px;
     /* border: 1px solid; */
 }
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-rows: 1fr 1fr 1fr;
     gap: 25px;
-    width: 74%;
+    width: 100%;
 }
 
 .projects > div {
     /* height: 200px; */
-    box-shadow: 5px 5px 5px gray;
+    box-shadow: 5px 10px 10px gray;
 }
 
-.projects > div:hover {
-    
+.projects .project:hover {
+    background-color: rgb(223, 221, 205);
+    transition: 0.1s ease-in;
+}
+
+
+
+.announcements {
+    border-radius: 25px;
+    border: 5px solid var(--color);
+    grid-column: 3/4;
+    grid-row: -4/-1;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    align-items: center;
+}
+
+
+/* svgs and imgs */
+
+#notification {
+    transform: scale(0.3);
+    /* position: absolute; */
+    top: 0px;
+    right: 225px;
+    border: 1px solid;
+    margin-top: 0px;
+}
+
+#profile-hero {
+    height: 150px;
+}
+
+#profile {
+    height: 30px;
 }
